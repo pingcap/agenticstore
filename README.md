@@ -1,34 +1,32 @@
 <p align="center">
-  <img src="public/logo.svg" alt="AgenticStack logo" width="120" height="120" />
+  <img src="public/logo.svg" alt="AgenticStore logo" width="120" height="120" />
 </p>
 
-# AgenticStack
+# AgenticStore
 
-AgenticStack is a repo for designing and curating SKILLS for code agents. It focuses on storage- and database-related capabilities for agentic apps, such as database provisioning, object storage access, and data lifecycle workflows. Components are added incrementally and documented as the stack grows.
+AgenticStore is a repo for designing and curating SKILLS for code agents. It focuses on database provisioning workflows for agentic apps, with TiDB Cloud as the current supported provider. Components are added incrementally and documented as the skill set grows.
 
 ## Goals
 
-- Provide reusable SKILLS for storage and database building blocks
-- Offer opinionated, composable storage/database workflows for AI app builders
+- Provide reusable SKILLS for database provisioning and lifecycle tasks
+- Offer opinionated, composable database workflows for AI app builders
 - Keep guidance practical, concise, and easy to apply in real projects
 
-## Scope (Planned Components)
+## Scope (Current + Planned)
 
-- Database (SQL/NoSQL selection, provisioning, migration flows, ORM patterns)
-- Object storage (providers, upload flows, access control)
-- Data lifecycle (backup/restore, retention, export/import)
+- TiDB Cloud serverless provisioning (clusters, branches, users, import/export)
+- More managed database providers (planned)
 
-## Structure (Suggested)
+## Structure
 
-This repo starts empty and grows over time. A typical layout will look like:
+The repo is centered around the `skills/` directory:
 
 - `skills/` - skill definitions and instructions
-- `references/` - deeper docs used by skills
 
 ## How to Use
 
 - Browse the `skills/` directory for capability-specific instructions.
-- Use skills to provision or manage storage/database resources.
+- Use skills to provision or manage database resources.
 
 ## Contributing
 
@@ -41,6 +39,5 @@ Contributions are welcome. If you add a new component, include:
 
 ## Roadmap
 
-- Add more database provisioning skills (managed SQL/NoSQL)
-- Add object storage skills (S3-compatible and cloud-specific)
-- Add data lifecycle skills (backup/restore, export/import)
+- Add more database provisioning skills (managed SQL/NoSQL providers)
+- Add database lifecycle skills (backup/restore, export/import)

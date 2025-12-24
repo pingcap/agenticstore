@@ -7,7 +7,12 @@ Use these patterns and replace placeholders in <> with user-provided values.
 ```bash
 ticloud serverless create --display-name <cluster-name> --region <region> --project-id <project-id>
 ticloud serverless list
-ticloud serverless delete --cluster-id <cluster-id>
+ticloud serverless list -p <project-id>
+ticloud serverless list -p <project-id> -o json
+ticloud serverless describe
+ticloud serverless describe -c <cluster-id>
+ticloud serverless delete
+ticloud serverless delete -c <cluster-id>
 ```
 
 ## Branch Operations (Serverless)
@@ -29,6 +34,7 @@ ticloud serverless export create --cluster-id <cluster-id> --target-type <target
 
 ```bash
 ticloud serverless region
+ticloud project list
 ticloud auth login
 ticloud auth whoami
 ```

@@ -65,7 +65,9 @@ Use `command -v ticloud` to confirm installation before marking it complete.
 
 Update checklist:
 
+Setup Status (TiDB Cloud component)
 - ● ticloud installed
+- ○ authenticated
 
 ### Authenticate
 
@@ -89,6 +91,8 @@ ticloud auth whoami
 
 Update checklist:
 
+Setup Status (TiDB Cloud component)
+- ● ticloud installed
 - ● authenticated
 
 ### Network/DNS Issues
@@ -112,6 +116,9 @@ Use terminal-friendly ASCII tables for any list output (regions, projects, clust
 - Keep headers short and descriptive.
 - Do not use Unicode box-drawing characters.
 - Always emphasize command output that users should execute later.
+  Example:
+  **Run this:**
+  **`ticloud auth login --insecure-storage`**
 
 Example format:
 
@@ -140,7 +147,7 @@ Example format:
 - If the user doesn’t know the project ID, run `ticloud project list` and present the results in the same ASCII bordered table format before asking. Keep the project ID as a third column.
 - Ask in this order: region (after listing options). Do not ask for project ID or cluster name until the region is chosen. After region selection, ask for project ID (after listing projects if needed). Only after project selection, ask for the cluster display name as the final confirmation step.
 - Confirm the required parameters (region, project, cluster name).
-- This action can also save or update database connection strings in `.env` when the user requests it.
+- If the user wants a `.env`, direct them to the TiDB Cloud console download for the cluster.
 - Use the serverless create command pattern from `references/ticloud.md`.
 - When creating a cluster, do not run the create command twice. Wait up to 60 seconds for completion before returning control.
 - Verify creation by listing clusters and present results in an ASCII bordered table rather than raw JSON. If the environment is non-interactive, use `ticloud serverless list -p <project-id> -o json` and render a table from the JSON.
@@ -182,24 +189,14 @@ Example format:
 ### Manage SQL Users
 
 - Use serverless SQL user commands from `references/ticloud.md`.
-- Prefer generating the command for the user rather than executing it, unless the user explicitly asks you to run it.
 - Do not generate passwords in scripts. Guide users to create/manage SQL users in the TiDB Cloud console and download the `.env` there.
 - Use this console URL pattern (fill in IDs): `https://tidbcloud.com/clusters/<cluster-id>/overview?orgId=<org-id>&projectId=<project-id>`.
 - Never read or display stored passwords (do not cat `.env`).
 - When listing SQL users, present results in an ASCII bordered table rather than raw JSON.
-- Default to `role_readwrite` unless the user requests a different role. When prompting, explicitly state that `role_readwrite` is the default.
-- For SQL usernames, accept the exact value the user provides (including prefixed names like `2Q3h2gvr6xKRBhn.killer`).
-- For password refresh, `--database` is optional; do not require it when updating a user.
-- When creating or updating SQL users, wait 60 seconds for completion before returning control.
-- When creating a SQL user, use a checklist and ask for these inputs one by one: username → database → role. When asking for role, list all available options first.
-- Before executing SQL user create/update, print all collected inputs (cluster ID, username, database, role, env file) and ask for explicit approval to run the command.
-- Use this exact approval summary format (add cluster name if known):
-  - Cluster name: `<cluster-name>`
-  - Cluster ID: `<cluster-id>`
-  - Username: `<user>`
-  - Database: `<database>`
-  - Role: `<role>`
-  - Env file: `<env-file>`
+- When guiding console creation, use a short step list:
+  1) Open the console link
+  2) Create the SQL user
+  3) Download the `.env`
 
 
 ## Safety Checks

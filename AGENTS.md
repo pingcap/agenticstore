@@ -5,7 +5,6 @@ This repository is a curated collection of Codex skills. The main directories ar
 
 - `README.md` for the high-level project overview and roadmap.
 - `skills/` for all skill definitions.
-- `skills/local/` for in-progress or experimental skills.
 
 Each skill lives in its own folder and must include a `SKILL.md` with YAML frontmatter. Optional subfolders include `scripts/`, `references/`, and `assets/` for helpers and deeper docs.
 

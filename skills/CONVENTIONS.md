@@ -5,7 +5,6 @@ This directory stores Codex skills for the AgenticStore repo.
 ## Layout
 
 - `skills/` - publishable skills
-- `skills/local/` - in-progress or experimental skills
 
 Each skill lives in its own folder named after the skill.
 

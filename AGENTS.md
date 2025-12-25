@@ -5,17 +5,12 @@ This repository is a curated collection of Codex skills. The main directories ar
 
 - `README.md` for the high-level project overview and roadmap.
 - `skills/` for all skill definitions.
-- `skills/public/` for publishable skills.
 - `skills/local/` for in-progress or experimental skills.
 
 Each skill lives in its own folder and must include a `SKILL.md` with YAML frontmatter. Optional subfolders include `scripts/`, `references/`, and `assets/` for helpers and deeper docs.
 
 ## Build, Test, and Development Commands
-There is no global build or test system in this repo. Most work is documentation and skill authoring. When a skill provides scripts, run them directly and refer to its `SKILL.md` for usage. Example:
-
-```bash
-python skills/public/tidbx/scripts/sql_user_manage.py --help
-```
+There is no global build or test system in this repo. Most work is documentation and skill authoring. When a skill provides scripts, run them directly and refer to its `SKILL.md` for usage.
 
 ## Coding Style & Naming Conventions
 - Skill folder names use lowercase letters, digits, and hyphens (e.g., `object-storage-s3`).

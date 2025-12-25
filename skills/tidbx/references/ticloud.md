@@ -41,8 +41,31 @@ ticloud auth whoami
 ## SQL User Operations (Serverless)
 
 ```bash
-ticloud serverless sql-user create --user <user-name> --password <password> --role <role> --cluster-id <cluster-id>
 ticloud serverless sql-user list --cluster-id <cluster-id>
 ticloud serverless sql-user update --user <user-name> --password <password> --role <role> --cluster-id <cluster-id>
 ticloud serverless sql-user delete --user <user-name> --cluster-id <cluster-id>
 ```
+
+Create a SQL user
+
+Usage:
+  ticloud serverless sql-user create [flags]
+
+Examples:
+  Create a SQL user in interactive mode:
+  $ ticloud serverless sql-user create
+
+  Create a SQL user in non-interactive mode:
+  $ ticloud serverless sql-user create --user <user-name> --password <password> --role <role> --cluster-id <cluster-id>
+
+Flags:
+  -c, --cluster-id string   The ID of the cluster.
+  -h, --help                help for create
+      --password string     The password of the SQL user.
+      --role strings        The role(s) of the SQL user, supported roles ["role_admin" "role_readwrite" "role_readonly"]
+  -u, --user string         The name of the SQL user, user prefix will be added automatically.
+
+Global Flags:
+  -D, --debug            Enable debug mode
+      --no-color         Disable color output
+  -P, --profile string   Profile to use from your configuration file

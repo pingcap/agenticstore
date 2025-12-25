@@ -1,10 +1,10 @@
 # Skill Conventions
 
-This directory stores Codex skills for the AgenticStack repo.
+This directory stores Codex skills for the AgenticStore repo.
 
 ## Layout
 
-- `skills/public/` - publishable skills
+- `skills/` - publishable skills
 - `skills/local/` - in-progress or experimental skills
 
 Each skill lives in its own folder named after the skill.
@@ -31,7 +31,7 @@ Optional directories:
 Prefer the `init_skill.py` helper to scaffold new skills:
 
 ```bash
-scripts/init_skill.py <skill-name> --path skills/public --resources scripts,references,assets
+scripts/init_skill.py <skill-name> --path skills --resources scripts,references,assets
 ```
 
 Package when ready:
@@ -45,4 +45,3 @@ scripts/package_skill.py <path/to/skill-folder>
 - Keep `SKILL.md` concise and action-oriented.
 - Move deep reference material into `references/`.
 - Avoid extra docs inside skill folders (no README or changelog).
-

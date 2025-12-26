@@ -15,6 +15,7 @@ AgenticStore is a repo for designing and curating SKILLS for code agents. It foc
 ## Scope (Current + Planned)
 
 - TiDB Cloud serverless provisioning (clusters, branches, users, import/export)
+- TiDB Cloud Kysely usage (TCP + serverless/edge)
 - More managed database providers (planned)
 
 ## Structure
@@ -27,6 +28,7 @@ The repo is centered around the `skills/` directory:
 
 - Browse the `skills/` directory for capability-specific instructions.
 - Use skills to provision or manage database resources.
+- Use the TiDB Cloud Kysely skill for app-side integration patterns.
 
 ## Contributing
 
